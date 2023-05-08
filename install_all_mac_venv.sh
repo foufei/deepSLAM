@@ -57,7 +57,7 @@ brew_install rsync
 . install_cpp.sh                    # use . in order to inherit python env configuration and other environment vars 
 
 # build and install thirdparty 
-. install_thirdparty.sh             # use . in order to inherit python env configuration and other environment vars 
+. install_thirdparty.sh -DPython_EXECUTABLE=/Users/jiayan/.pyenv/versions/3.6.9/bin/python             # use . in order to inherit python env configuration and other environment vars
 
 # N.B.:
 # if your run into troubles with opencv xfeatures2D/SIFT/SURF then run the following commands into your pyslam environment 

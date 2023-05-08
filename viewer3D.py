@@ -125,11 +125,18 @@ class Viewer3D(object):
 
         # Create Interactive View in window
         self.dcam = pangolin.CreateDisplay()
-        self.dcam.SetBounds(0.0, 1.0, kUiWidth/w, 1.0, -w/h)
+        self.dcam.SetBounds(pangolin.Attach(0.0),
+                            pangolin.Attach(1.0),
+                            pangolin.Attach(kUiWidth/w),
+                            pangolin.Attach(1.0),
+                            -w/h)
         self.dcam.SetHandler(pangolin.Handler3D(self.scam))
 
         self.panel = pangolin.CreatePanel('ui')
-        self.panel.SetBounds(0.0, 1.0, 0.0, kUiWidth/w)
+        self.panel.SetBounds(pangolin.Attach(0.0),
+                             pangolin.Attach(1.0),
+                             pangolin.Attach(0.0),
+                             pangolin.Attach(kUiWidth/w))
 
         self.do_follow = True
         self.is_following = True 
